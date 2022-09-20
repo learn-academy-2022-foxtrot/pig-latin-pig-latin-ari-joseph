@@ -37,13 +37,39 @@ const App = () => {
       //Output: String
 
       //Declare fLetter as eachWord.charAt(0)
-      let fChar = eachWord.charAt(0);
+      let fChar = eachWord.charAt(0); //Story 1
+
+      // for (let i = 0; i < eachWord.length; i++) {
+      //   for (let j = i + 1; i < eachWord.length; i++) {
+      //     if (eachWord[i] === "q" && eachWord[j] === "u") {
+      //       return eachWord.slice(j + 1).concat("quay");
+      //     }
+      //   }
+      // }
+      // queen = ueenqay
+      // queen = eenquay
+
+      // const checkQU = (array) => {
+      //   for (let i = 0; i < array.length; i++) {
+      //     for (let j = i + 1; i < array.length; i++) {
+      //       if (array[i] === "q" && array[j] === "u") {
+      //         return array;
+      //       }
+      //     }
+      //   }
+      // };
 
       //If Vowels Arr is included inside of current Word
       if (vowelsArray.includes(fChar)) {
         //Add 'way' to end of array and return
         return eachWord.concat("way");
+      } else if (eachWord.includes("qu")) {
+        let qu = eachWord.indexOf("u") + 1;
+        return eachWord.slice(qu) + eachWord.slice(0, qu).concat("ay");
       }
+      // qu - een + een + quay
+      // squ - eal + eal + squay
+
       //Else if
 
       //Add 'way' to the end of string
