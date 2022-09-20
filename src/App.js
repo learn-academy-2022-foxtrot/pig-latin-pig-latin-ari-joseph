@@ -4,9 +4,7 @@ import butcherPigImage from "./assets/butcherPig.jpeg";
 
 const App = () => {
   // ACTION ITEM: to make the development process easier there are some preassigned words in the input field, when you are ready for your full user experience delete the test words passed to useState and pass an empty string
-  const [userInput, setUserInput] = useState(
-    "apple through queen squeal fry fluent"
-  );
+  const [userInput, setUserInput] = useState("enter the frying pan");
   const [inputTranslated, setInputTranslated] = useState("");
 
   // ACTION ITEM: the "myPigLatinCodeHere" function is where you will put your logic to translate the sentence entered by the user into Pig Latin
@@ -123,7 +121,7 @@ const App = () => {
 
   // ACTION ITEM: this method restarts the game by setting the original state, when you are ready for your full user experience delete the test words in setUserInput and pass an empty string
   const restartGame = () => {
-    setUserInput("apple through queen squeal fry fluent");
+    setUserInput("");
     setInputTranslated("");
   };
 
@@ -141,9 +139,12 @@ const App = () => {
   return (
     <div className="page-container">
       <div className="body-container">
-        <h1>Pig Latin Translator</h1>
+        <h1 className="fancyHeader">Pig Latin Translator</h1>
+        <h2 className="fancyHeader">v2: The Oinkening</h2>
         <img
-          src={butcherPigImage}
+          src={
+            "https://i.ibb.co/v1n8qTT/cooked-bacon-115507161720t2xqt011j-removebg-preview.png"
+          }
           alt="pig with butcher cut names in pig latin"
           className="butcher-pig-image"
         />
@@ -157,12 +158,23 @@ const App = () => {
             value={userInput}
           />
           <br />
-          <button onClick={setUpPreventDefault}>Submit</button>
+          <button onClick={setUpPreventDefault}>Cook</button>
           <button onClick={restartGame}>Clear</button>
         </div>
-        <p>{inputTranslated}</p>
+        <div className="outputBox">
+          <p className="outputText">{inputTranslated}</p>
+        </div>
       </div>
-      <footer>&copy; 2022 | Coded by: Your Names Here!</footer>
+      <div className="elmoGifs">
+        {" "}
+        <img src="https://media3.giphy.com/media/P7JmDW7IkB7TW/giphy.gif"></img>
+        <img src="https://media3.giphy.com/media/P7JmDW7IkB7TW/giphy.gif"></img>
+        <img src="https://media3.giphy.com/media/P7JmDW7IkB7TW/giphy.gif"></img>
+      </div>
+
+      <footer className="footerText">
+        &copy; 2022 | Coded by: Joseph and Ari
+      </footer>
     </div>
   );
 };
