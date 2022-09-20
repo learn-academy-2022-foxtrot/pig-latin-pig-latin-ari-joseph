@@ -38,7 +38,7 @@ const App = () => {
 
       //Declare fLetter as eachWord.charAt(0)
       let fChar = eachWord.charAt(0); //Story 1
-
+      let vowelHolder = 0;
       // for (let i = 0; i < eachWord.length; i++) {
       //   for (let j = i + 1; i < eachWord.length; i++) {
       //     if (eachWord[i] === "q" && eachWord[j] === "u") {
@@ -62,13 +62,46 @@ const App = () => {
       //If Vowels Arr is included inside of current Word
       if (vowelsArray.includes(fChar)) {
         //Add 'way' to end of array and return
-        return eachWord.concat("way");
+        return eachWord.concat("way"); // Output: appleway
       } else if (eachWord.includes("qu")) {
         let qu = eachWord.indexOf("u") + 1;
         return eachWord.slice(qu) + eachWord.slice(0, qu).concat("ay");
+        // qu - een + een + quay
+        // squ - eal + eal + squay
+      } else if (vowelsArray.length > 0 && vowelsArray !== undefined) {
+        // Know what the first vowel is (index of vowel)
+        // Slice accordingly
+        for (let i = 0; i < eachWord.length; i++) {
+          if (
+            eachWord[i] === "a" ||
+            eachWord[i] === "e" ||
+            eachWord[i] === "i" ||
+            eachWord[i] === "o" ||
+            eachWord[i] === "u"
+          ) {
+            //Reassigned value of i (position of first vowel) to temp variable (vowelHolder)
+            vowelHolder = i;
+          }
+        }
+        return (
+          eachWord.slice(vowelHolder - 1) +
+          eachWord.slice(0, vowelHolder - 1).concat("ay")
+        );
+        //through --> Expected: oughthray
+      } else {
+        for (let i = 0; i < eachWord.length; i++) {
+          if (eachWord[i] === "y") {
+            //Reassigned value of i (position of first vowel) to temp variable (vowelHolder)
+            vowelHolder = i;
+          }
+        }
+        //Return current eachWord w/ last word as 1st word and add 'ay' at the end
+        // fry --> yfray
+        return (
+          eachWord.slice(vowelHolder) +
+          eachWord.slice(0, vowelHolder).concat("ay")
+        );
       }
-      // qu - een + een + quay
-      // squ - eal + eal + squay
 
       //Else if
 
