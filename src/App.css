@@ -1,8 +1,16 @@
 * {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
-
+/* UNIVERSAL */
+.fancyHeader {
+  font-family: "Bungee Spice", cursive;
+}
+body {
+  background: url("https://wallpaperaccess.com/full/511758.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+}
 /* ---HEADER--- */
 
 h1 {
@@ -10,13 +18,15 @@ h1 {
 }
 
 .butcher-pig-image {
-  margin: 1rem;
-  width: 14rem;
+  height: 30rem;
+  width: 45rem;
+  margin: -8rem;
 }
 
 /* ---BODY--- */
 
 button {
+  font-weight: 600;
   border-radius: 0.9rem;
   margin: 1rem;
   padding: 1rem;
@@ -32,21 +42,51 @@ button {
 }
 
 .input-section {
-  background-color: grey;
-  border-radius: .5rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.9368206521739131) 37%,
+    rgba(150, 22, 0, 0.7908579192546584) 73%,
+    rgba(255, 38, 0, 0.5641498447204969) 91%
+  );
+  border-radius: 0.5rem;
   color: #fff;
   margin: 1rem;
   padding: 1rem;
 }
 
 .user-input {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-size: 1rem;
   height: 3rem;
   width: 30rem;
 }
 
+.outputBox {
+  background: #000;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.outputText {
+  font-family: "Bungee Spice", cursive;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #fff;
+}
+
+.elmoGifs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ---FOOTER--- */
+.footerText {
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 3px 1px 2px #fff;
+}
 
 footer {
   bottom: 0;
